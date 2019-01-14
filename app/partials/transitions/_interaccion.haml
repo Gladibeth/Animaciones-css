@@ -1,0 +1,54 @@
+.canasta
+  .pelota.a Hola 
+  .pelota.b Mundo
+
+:css
+  body{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    height:100vh;
+  }
+  .canasta {
+    border: 1px solid red;
+    position: relative;
+    height: 100px;
+    width:100%;
+
+  }
+  .pelota {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    background-color: red;
+    // transition-property: width;
+    // transition-duration: 1s;
+    // transition-timing-function: ease;
+    transition:  1s ease;
+    position: absolute;
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+  }
+  .pelota.a{
+    background-color: red;
+    left:0;
+  }
+
+  .pelota.b{
+    background-color: blue;
+    right:0;
+  }
+
+  .canasta:hover .pelota.a{
+    background-color: red;
+    left: calc(50% - 100px);
+  }
+
+  .canasta:hover .pelota.b{
+    background-color: blue;
+    right:calc(50% - 100px);
+  }
+
+  

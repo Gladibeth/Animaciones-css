@@ -1,0 +1,106 @@
+.container
+  .cuadrado#cuadrado
+:css
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    height: 100vh;
+    color: white;
+    font-family: Arial;
+  }
+
+  .container {
+    border: 1px solid red;
+    width: 100%;
+    height: 300px;
+    
+  }
+  .container:hover .cuadrado {
+    animation-play-state: paused;
+    
+  }
+  .cuadrado {
+    border-radius: 50%;
+    animation-name: cuadrado, rebote;
+    animation-duration: 3s, .3s;
+    // animation-delay: 1s;
+    // animation-iteration-count: 2;
+    animation-iteration-count: infinite, 20;
+    animation-timing-function: ease;
+    
+    //ningun tipo de suavizado
+    // animation-timing-function: linear;
+    // animation-timing-function: cubic-bezier(1,1,1,1);
+    
+    // punto de origen
+    // animation-direction: reverse;
+    animation-direction: alternate;
+    
+    // Efecto luego de terminar la animacion
+    animation-fill-mode: forwards;
+    
+    // saber estado de animacion
+    // animation-play-state: running;
+    // animation-play-state: paused;
+    
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #7dc900;
+    margin: 20px;
+    // transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    // animation-timing-function: ease-in;
+    // animation-timing-function: ease-out;
+    // animation-timing-function: ease-in-out;
+    // animation-timing-function: linear;
+
+    //rebotes
+    // animation-timing-function:  steps(5)
+
+    // animation-timing-function: cubic-bezier(1,-1,1,-1)
+    // animation-timing-function: cubic-bezier(.75, -0.31, .33, 1.4);
+    animation-timing-function: linear, ease-in-out ;
+  }
+
+  @keyframes cuadrado{
+    0%{
+      // opacity: 1;
+      left: 0;
+    }
+    100% {
+      // opacity: 0;
+      left: calc(100% - 220px);
+    }
+  }
+
+  @keyframes escalera{
+    from{
+      transform: translateY(0);
+    }
+    to{
+      transform: translateY(300px);
+    }
+  }
+
+  @keyframes rebote{
+    from{
+      transform: translateY(0);
+    }
+    to{
+      transform: translateY(100px) scale(1, .8);
+    }
+  }
+:javascript
+  const $cuadrado = document.getElementById('cuadrado');
+
+  // $cuadrado.addEventListener('nombre del evento', 'que hhacer cuandoel evento ocurra'); 
+  $cuadrado.addEventListener('animationend', (event) => {
+    if (event.animationName === 'rebote') {
+      $cuadrado.style.animationName = 'cuadrado escalera';
+      $cuadrado.style.animationDuration = '3s';
+    }
+  }); 

@@ -1,0 +1,47 @@
+:ruby
+  def render(partial)
+    Haml::Engine.new(File.read(partial)).render
+  end
+!!!
+%html{lang: "en"}
+  %head
+    %meta{charset: "UTF-8"}/
+    %meta{content: "width=device-width, initial-scale=1.0", name:"viewport"}/
+    %title Animaciones CSS
+    %link{rel: "stylesheet", href:"assets/css/main.css"}/
+  %body
+    // Transitions
+
+    // = render ('app/partials/transitions/_index.haml')
+    // = render ('app/partials/transitions/_interaccion.haml')
+    
+    // Transform
+
+    // = render ('app/partials/transform/_index.haml')
+    -# = render ('app/partials/transform/_transform-rotate.haml')
+    -# = render ('app/partials/transform/_transform-translate.haml')
+    -# = render ('app/partials/transform/_transform-scale.haml')
+    -# = render ('app/partials/transform/_transform-skew.haml')
+    -# = render ('app/partials/transform/_transform-origin.haml')
+
+    // Animations
+
+    -# = render ('app/partials/animations/_sintaxis.haml')
+    -# = render ('app/partials/animations/_speed.haml')
+    -# = render ('app/partials/animations/_multiple-animations.haml')
+    -# = render ('app/partials/animations/_animations_js.haml')
+    -# = render ('app/partials/animations/_animation-willChange.haml')
+
+    // Animacion con javascript
+
+    -# = render ('app/partials/javascript-animate/_index.haml')
+    -# = render ('app/partials/javascript-animate/_control-animate.haml')
+
+    // Examples
+    -# = render ('app/partials/examples/_logo-platzi.haml')
+    // = render ('app/partials/examples/_animation-in-out.haml')
+    // = render ('app/partials/examples/_animation-modal.haml')
+    = render ('app/partials/examples/_animation-like-twitter.haml')
+    
+    %script{src: "assets/js/jquery.min.js"}
+    %script{src: "assets/js/main.js"}

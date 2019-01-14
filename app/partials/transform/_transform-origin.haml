@@ -1,0 +1,42 @@
+.container
+  .cuadrado Hola Mundo
+
+:css
+  body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  color: white;
+  font-family: Arial;
+}
+
+.container {
+  border: 1px solid red;
+}
+.container:hover .cuadrado {
+  // transform: rotateX(45deg);
+  // transform-origin: 50% 50%;
+  // transform-origin: top;
+  // transform: rotateY(45deg);
+  // transform-origin: left;
+  // transform: rotateZ(45deg);
+  // transform-origin: left top;
+  // transform: rotateZ(45deg);
+  // transform-origin: 75% 75%;
+  transform: skew(45deg);
+  transform-origin: top right;
+  
+}
+.cuadrado {
+  width: 200px;
+  height: 200px;
+  background-color: #7dc900;
+  margin: 20px;
+  transition: .3s;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  
+}

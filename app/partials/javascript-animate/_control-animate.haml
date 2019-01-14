@@ -1,0 +1,90 @@
+.container
+  .pelota#pelota
+  .buttons
+    %button.btn#play Play
+    %button.btn#pause Pause
+    %button.btn#stop Stop
+    %button.btn#reverse Reverse
+:css
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .container {
+    border: 1px solid red;
+    width: 600px;
+  }
+
+  .pelota {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+  }
+
+  .btn {
+    text-align: center;
+    background-color: #7dc800;
+    padding: .6em .8em .8em;
+    border:none;
+    margin: 5px;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: inset 0 -.2em rgba(0, 0, 0 , .2);
+    outline:0;
+    transition: .2s;
+    will-change: transform;
+  }
+  .btn:active {
+    transform: scale(.9);
+  }
+
+:javascript
+  const $pelota = document.getElementById('pelota');
+
+  // Element.animate(Keyframes = [], option = {})
+
+  const animation = $pelota.animate([
+    //from
+    {
+      transform: 'translateX(0)'
+    },
+    //to
+    {
+      transform: 'translateX(500px)'
+    }
+  ], {
+      duration: 1000,
+      delay: 1000,
+      direction: 'alternate',
+      easing: 'linear',
+      iterations: Infinity,
+      fill: 'forwards',
+      iterationStart: .5  // 0 - 1
+      // endDelay: 5000,
+    })
+  const $play = document.getElementById('play')
+  const $pause = document.getElementById('pause')
+  const $stop = document.getElementById('stop')
+  const $reverse = document.getElementById('reverse')
+
+
+  $play.addEventListener('click', () => {
+    animation.play();
+  });
+
+  $pause.addEventListener('click', () => {
+    animation.pause();
+  });
+
+  $stop.addEventListener('click', () => {
+    animation.stop();
+  });
+
+  $reverse.addEventListener('click', () => {
+    animation.reverse();
+  });

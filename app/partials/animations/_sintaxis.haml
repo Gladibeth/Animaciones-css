@@ -1,0 +1,69 @@
+.container
+  .cuadrado Hola Mundo
+:css
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-family: Arial;
+  }
+
+  .container {
+    border: 1px solid red;
+    width: 100%;
+    
+  }
+  .container:hover .cuadrado {
+    animation-play-state: paused;
+    
+  }
+  .cuadrado {
+    border-radius: 50%;
+    animation-name: cuadrado;
+    animation-duration: 2s;
+    // animation-delay: 1s;
+    // animation-iteration-count: 2;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease;
+    // animation-timing-function: ease-in;
+    // animation-timing-function: ease-out;
+    // animation-timing-function: ease-in-out;
+
+    //ningun tipo de suavizado
+    // animation-timing-function: linear;
+    // animation-timing-function: cubic-bezier(1,1,1,1);
+
+    // punto de origen
+    // animation-direction: reverse;
+    animation-direction: alternate;
+
+    // Efecto luego de terminar la animacion
+    animation-fill-mode: forwards;
+
+    // saber estado de animacion
+    // animation-play-state: running;
+    // animation-play-state: paused;
+
+    position: relative;
+    width: 200px;
+    height: 200px;
+    background-color: #7dc900;
+    margin: 20px;
+    // transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  @keyframes cuadrado{
+    0%{
+      // opacity: 1;
+      left: 0;
+    }
+    100% {
+      // opacity: 0;
+      left: calc(100% - 240px);
+    }
+  }

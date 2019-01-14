@@ -1,0 +1,35 @@
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0;
+  height: 100vh;
+}
+
+.like {
+  // width: 100px;
+  // height: 100px;
+  width: 50px;
+  height: 50px;
+  cursor: pointer;
+  background-image: url('../img/corazon.png');
+  background-size: 1450px 50px;
+ 
+  // tamaño de la imagen 2900x100
+  // 2900 / 29 steps  moverse de 100 en 100
+
+}
+
+.like.is-liked {
+  animation: like .8s steps(28) forwards;
+}
+
+@keyframes like {
+  0% {
+    background-position: 0 0;
+    // transform: translateX(0px)
+  }
+  100% {
+    background-position: right;
+  }
+}

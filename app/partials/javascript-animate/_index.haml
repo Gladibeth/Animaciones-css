@@ -1,0 +1,47 @@
+.container
+  .pelota#pelota
+
+:css
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    width: 100%;
+  }
+
+  .container {
+    border: 1px solid red;
+    width: 600px;
+  }
+
+  .pelota {
+    width: 100px;
+    height: 100px;
+    background-color: red;
+    border-radius: 50%;
+  }
+:javascript
+  const $pelota = document.getElementById('pelota');
+
+  // Element.animate(Keyframes = [], option = {})
+
+  $pelota.animate([
+    //from
+    {
+      transform: 'translateX(0)'
+    },
+    //to
+    {
+      transform: 'translateX(500px)'
+    }
+  ], {
+      duration: 1000,
+      delay: 1000,
+      direction: 'normal',
+      easing: 'linear',
+      iterations: Infinity,
+      fill: 'forwards',
+      iterationStart: .5  // 0 - 1
+      // endDelay: 5000,
+    })

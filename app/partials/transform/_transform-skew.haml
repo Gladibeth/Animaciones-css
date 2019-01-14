@@ -1,0 +1,31 @@
+.container
+  .cuadrado Hola Mundo
+:css
+  body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: white;
+    font-family: Arial;
+  }
+
+  .container {
+    border: 1px solid red;
+  }
+  .container:hover .cuadrado {
+    // transform: skew(45deg)
+    transform: skew(10deg, 10deg);
+  }
+  .cuadrado {
+    width: 200px;
+    height: 200px;
+    background-color: #7dc900;
+    margin: 20px;
+    transition: .3s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: skew(10deg, 10deg);
+    transform: rotate(45deg)
+  }
