@@ -1,35 +1,69 @@
 body {
+  margin: 0;
+  padding: 0;
+}
+.container {
+  position: relative;
+  height: 100vh;
+  background: #0f9bf6;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 0;
-  height: 100vh;
+  overflow: hidden;
+  
 }
 
-.like {
-  // width: 100px;
-  // height: 100px;
-  width: 50px;
-  height: 50px;
-  cursor: pointer;
-  background-image: url('../img/corazon.png');
-  background-size: 1450px 50px;
- 
-  // tamaño de la imagen 2900x100
-  // 2900 / 29 steps  moverse de 100 en 100
+.content {
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  font-size: 2em;
+  color: rgba(255, 255, 255, .8);
+}
+.waves {
+  position: absolute;
+  // left: 0;
+  // right: 0;
+  // bottom: 0;
+  // height: 200px;
+  bottom: -135px;
+  height: 527px;
+  width: 100%;
+  overflow: hidden;
 
 }
-
-.like.is-liked {
-  animation: like .8s steps(28) forwards;
+.wave{
+  // border-radius: 50%;
+  // height: 200px;
+  // width: 100%;
+  left: -180px;
+  bottom: 0; 
+  width: 2402px;
+  height: 427px;
+  background: url("../img/waves.png") center bottom no-repeat;
+  position: absolute;
+  animation: 5s wave ease-in-out infinite alternate;
 }
 
-@keyframes like {
-  0% {
-    background-position: 0 0;
-    // transform: translateX(0px)
+.wave.a{
+ background-position: 0 -854px;
+}
+.wave.b{
+ animation-delay: .6s; 
+ background-position: 0 -427px;
+}
+
+.wave.c{
+ animation-delay: 1.2s;
+ background-position: 0 -0px; 
+}
+@keyframes wave{
+  0%{
+    transform: translateX(0px, 0px);
+  }
+  50%{
+    transform: translate(-80px, 30px);
   }
   100% {
-    background-position: right;
+    transform: translateX(1600px, -60px);
   }
 }

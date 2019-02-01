@@ -8,6 +8,7 @@
     %meta{charset: "UTF-8"}/
     %meta{content: "width=device-width, initial-scale=1.0", name:"viewport"}/
     %title Animaciones CSS
+    %link(rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css")/
     %link{rel: "stylesheet", href:"assets/css/main.css"}/
   %body
     // Transitions
@@ -41,7 +42,9 @@
     -# = render ('app/partials/examples/_logo-platzi.haml')
     // = render ('app/partials/examples/_animation-in-out.haml')
     // = render ('app/partials/examples/_animation-modal.haml')
-    = render ('app/partials/examples/_animation-like-twitter.haml')
+    -# = render ('app/partials/examples/_animation-like-twitter.haml')
+    -# = render ('app/partials/examples/_animation-notification.haml')
+    = render ('app/partials/examples/_animation-wave.haml')
     
     %script{src: "assets/js/jquery.min.js"}
     %script{src: "assets/js/main.js"}
